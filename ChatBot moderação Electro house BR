@@ -683,14 +683,14 @@
     }
 
     whyWootCommand.prototype.init = function() {
-      this.command = '!Brutos';
+      this.command = '!infinity';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'featured';
     };
 
     whyWootCommand.prototype.functionality = function() {
       var msg, nameIndex;
-      msg = "Se tu não entrar na linha, vai tomar um ban!";;
+      msg = "Se tu não entrar na linha, vai tomar um ban vlw? flw! ";;
       if ((nameIndex = this.msgData.message.indexOf('@')) !== -1) {
         return API.sendChat(this.msgData.message.substr(nameIndex) + ', ' + msg);
       } else {
@@ -839,7 +839,7 @@
 
     wootCommand.prototype.functionality = function() {
       var msg, nameIndex;
-      msg = "Use o auto woot para evitar remoção da cabine de DJ por não estar votando./goo.gl/ptXoee ";
+      msg = "Use o auto woot para evitar remoção da cabine de DJ por não estar votando. /goo.gl/ptXoee ";
       if ((nameIndex = this.msgData.message.indexOf('@')) !== -1) {
         return API.sendChat(this.msgData.message.substr(nameIndex) + ', ' + msg);
       } else {
