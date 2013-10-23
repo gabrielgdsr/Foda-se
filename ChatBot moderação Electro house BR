@@ -57,7 +57,7 @@
       curates: 0
     };
 
-    settings.prototype.pupScriptUrl = 'https://raw.github.com/Brutos/chatbotvm/master/.gitignore';
+    settings.prototype.pupScriptUrl = 'https://raw.github.com/gustavonzr/Foda-se/master/ChatBot%20modera%C3%A7%C3%A3o%20Electro%20house%20BR';
 
     settings.prototype.afkTime = 15 * 60 * 1000;
 
