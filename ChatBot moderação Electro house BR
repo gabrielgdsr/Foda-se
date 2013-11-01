@@ -73,7 +73,7 @@
       },{
         interval: 9,
         offset: 0,
-        msg: "/em: Entre no nosso grupo do facebook e fique por dentro de todas as nossas atualizações: http://www.facebook.com/groups/1378744439017099/"
+        msg: "/em: Entre no nosso grupo do facebook e fique por dentro de todas as nossas atualizações: https://www.facebook.com/groups/PlugETD/"
       }
     ];
 
@@ -349,7 +349,7 @@
   })();
 
   pupOnline = function() {
-    return API.sendChat("/me Bot INFlNITY versão ★Electro House BR★ 100%. ON!");
+    return API.sendChat("/me ON!");
   };
 
   populateUserData = function() {
@@ -785,7 +785,7 @@
 
     roomHelpCommand.prototype.functionality = function() {
       var msg1, msg2;
-      msg1 = "Bem vindo a sala ★Electro House BR★! Ser DJ: Crie uma lista de reprodução e coloque Musica do Youtube ou soundcloud. ";
+      msg1 = "Bem vindo a nossa sala Ser DJ: Crie uma lista de reprodução e coloque Musica do Youtube ou soundcloud. ";
       msg1 += "Se é novo procure pelo seu nome na sua tela (próximo a cabine do DJ) e depois mude o nome. ";
       msg1 += "Para Ganhar Pontos clique em Bacana. ";
       msg2 = "Divirta-se! Qualquer outra duvida chame um adm da sala ";
@@ -815,7 +815,7 @@
 
     sourceCommand.prototype.functionality = function() {
       var msg;
-      msg = ' BOT criado por Backus e editado por INFINITY para a ★Electro House BR★ ';
+      msg = ' BOT criado por Backus e editado por INFINITY ';
       return API.sendChat(msg);
     };
 
@@ -892,7 +892,7 @@
     downloadCommand.prototype.functionality = function() {
       var msg;
       msg = "  Participe do grupo e fique por dentro de todas nossas atualizações! ";
-      msg += "https://www.facebook.com/groups/1378744439017099/ ";
+      msg += "https://www.facebook.com/groups/PlugETD/";
       msg += " :+1: ";
       return API.sendChat(msg);
     };
