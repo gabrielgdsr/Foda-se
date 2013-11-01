@@ -122,7 +122,7 @@ TFLEnhancedModel = require('app/base/Class').extend({
         plugCubed = undefined
     },
     initCSS: function() {
-        $('#room-wheel').css('background','url("http://i.imgur.com/1n4o6iL.png")');
+        $('#room-wheel').css('background','url("http://i.imgur.com/g2z5WQ3.png")');
         $('#room-wheel').css('background-repeat','no-repeat');
         $('#room-wheel').css('background-position','500px 275px');
         $('#meta-frame .frame-background').hide('.frame-background');
