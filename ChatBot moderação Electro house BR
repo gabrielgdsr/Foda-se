@@ -73,7 +73,7 @@
       },{
         interval: 9,
         offset: 0,
-        msg: "/em: Entre no nosso grupo do facebook e fique por dentro de todas as nossas atualizações: https://www.facebook.com/groups/PlugETD/"
+        msg: "/em: Entre no nosso grupo do facebook e fique por dentro de todas as nossas atualizações: http://goo.gl/EWILgH"
       }
     ];
 
@@ -892,7 +892,7 @@
     downloadCommand.prototype.functionality = function() {
       var msg;
       msg = "  Participe do grupo e fique por dentro de todas nossas atualizações! ";
-      msg += "https://www.facebook.com/groups/PlugETD/";
+      msg += "http://goo.gl/EWILgH";
       msg += " :+1: ";
       return API.sendChat(msg);
     };
