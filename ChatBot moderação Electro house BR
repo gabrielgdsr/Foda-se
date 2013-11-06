@@ -1538,8 +1538,8 @@
 
     whyMehCommand.prototype.functionality = function() {
       var msg;
-      msg = "/emprefiro morrer do que perder a vida!! ";
-      msg += "-INFINITY";
+      msg = "/em Prefiro morrer do que perder a vida!! ";
+      msg += "  -INFINITY";
       return API.sendChat(msg);
     };
 
