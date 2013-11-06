@@ -1531,15 +1531,15 @@
     }
 
     whyMehCommand.prototype.init = function() {
-      this.command = '!cotas';
+      this.command = '!morrer';
       this.parseType = 'exact';
       return this.rankPrivelege = 'bouncer';
     };
 
     whyMehCommand.prototype.functionality = function() {
       var msg;
-      msg = "/em acaba de ativar o modo cotas! ";
-      msg += "Roubou sua vaga na faculdade, suas mulheres e sua vez na cabine de DJ";
+      msg = "/emprefiro morrer do que perder a vida!! ";
+      msg += "-INFINITY";
       return API.sendChat(msg);
     };
 
