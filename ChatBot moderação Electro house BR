@@ -884,7 +884,7 @@
     }
 
     downloadCommand.prototype.init = function() {
-      this.command = '!facebook';
+      this.command = '!fb';
       this.parseType = 'exact';
       return this.rankPrivelege = 'featured';
     };
