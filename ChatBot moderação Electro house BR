@@ -690,7 +690,7 @@
 
     whyWootCommand.prototype.functionality = function() {
       var msg, nameIndex;
-      msg = "Se tu não entrar na linha, vai tomar um ban vlw? flw! ";;
+      msg = "/me O Zika da balada! ";;
       if ((nameIndex = this.msgData.message.indexOf('@')) !== -1) {
         return API.sendChat(this.msgData.message.substr(nameIndex) + ', ' + msg);
       } else {
