@@ -349,7 +349,7 @@
   })();
 
   pupOnline = function() {
-    return API.sendChat("/me ON!");
+    return API.sendChat("/me ON :white_check_mark: !!");
   };
 
   populateUserData = function() {
