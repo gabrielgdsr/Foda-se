@@ -12,13 +12,13 @@ toSave.settings = mubBot.settings;
 toSave.moderators = mubBot.moderators;
 toSave.ruleSkip = ruleSkip;
 
-mubBot.misc.Rules = "1.Do not play troll songs 2.Do not ask for ranks 3.Follow the theme 4.Don\'t spam 5.No Advertising rooms, websites, etc.. 6.No songs over 5 minutes unless aproved by a mod 7.All videos must be appropriate for users under 14.";
-mubBot.misc.Commands = "go to https://docs.google.com/document/d/1azqfktew9IJFP4gaXWbS9aLuKyyjPMOMeFNGxxeRCKY/edit?pli=1"
+mubBot.misc.Rules = "1)Maximum Time 6 minutes and 30 seconds.2)Dont ask for fan /Não peça fans3)Respect the moderators of the room./respeite a STAFF 4)No flooding the chat./sem spam no chat 5)Cant ask for staff positions/Não peça cargos na STAFF -(Allowed genres/gêneros permitidos: Electro, Dubstep, Techno, Trap, EDM, Hardstyle , Trance , House ....";
+mubBot.misc.Commands = "Comandos para a staff da sala https://docs.google.com/document/d/1azqfktew9IJFP4gaXWbS9aLuKyyjPMOMeFNGxxeRCKY/edit?pli=1"
 mubBot.misc.Themes = "Dubstep, Remix's, and techno";
-mubBot.misc.help = "Type !rules for rules and !commands for commands" //What Help will say
+mubBot.misc.help = "Digite !regras para regras e !comandos para comandos" //What Help will say
 mubBot.misc.version = "1.0.8";
-mubBot.misc.origin = "This bot was created by Dubstepers, Alexander7370, and Foxdemon143. This bot and its script are copyrighted!";
-mubBot.misc.changelog = "Added a secondary check for history";
+mubBot.misc.origin = "Este bot foi criado pelo Dubstepers, Alexander7370 e editado por INFINITY !";
+mubBot.misc.changelog = "Adicionado uma verificação secundária para a história";
 mubBot.misc.ready = true;
 mubBot.misc.lockSkipping = false;
 mubBot.misc.lockSkipped = "0";
@@ -68,7 +68,7 @@ function djAdvanceEvent(data){
 API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)
 {
-API.sendChat("@" + user.username + " has joined the room.");
+API.sendChat("@" + user.username + " acabou de entrar na sala!.");
 }
 
 
@@ -134,13 +134,13 @@ botMethods.djAdvanceEvent = function(data){
     var song = API.getMedia();
     if(botMethods.checkHistory() > 0 && mubBot.settings.historyFilter){
         if(API.getUser().permission < 2){
-            API.sendChat("This song is in the history! You should make me a mod so that I could skip it!");
+            API.sendChat("Esta canção está na história! Você deve me fazer um mod para que eu pudesse ignorá-lo!");
         }else if(API.getUser().permission > 1){
-            API.sendChat("@" + API.getDJs()[0].username + ", playing songs that are in the history isn't allowed, please check next time! Skipping..");
+            API.sendChat("@" + API.getDJs()[0].username + ", tocando músicas que estão na história não é permitido, por favor, verifique a próxima vez! Ignorando ..");
             botMethods.skip()
         }else if(song.duration > mubBot.settings.maxLength * 60){
             mubBot.pubVars.skipOnExceed = setTimeout( function(){
-                API.sendChat("@"+API.getDJs()[0].username+" You have now played for as long as this room allows, time to let someone else have the booth!");
+                API.sendChat("@"+API.getDJs()[0].username+" Você já jogou por quanto tempo esta sala permite, é hora de deixar alguém ter a cabine!");
                 botMethods.skip();
             }, mubBot.settings.maxLength * 60000);
             //API.sendChat("@"+API.getDJs()[0].username+" This song will be skipped " + mubBot.settings.maxLength + " minutes from now because it exceeds the max song length.");
@@ -462,9 +462,9 @@ botMethods.djAdvanceEvent = function(data){
                         API.sendChat("Rules: " + mubBot.misc.Rules);
                     break
                     
-                    case "themes":
+                    case "temas
                     case "theme":
-                        API.sendChat("The different themes aloud are: " + mubBot.misc.Themes);
+                        API.sendChat("TAllowed genres/gêneros permitidos: Electro, Dubstep, Techno, Trap, EDM, Hardstyle , Trance , House ..." + mubBot.misc.Themes);
                     break
                     
                     case "help":
@@ -475,7 +475,7 @@ botMethods.djAdvanceEvent = function(data){
                         API.sendChat("Is ThIs DeRpY eNoUgH fOr YoU http://i.imgur.com/MqTfoHg.png");
                     break
                     
-                    case "commands":
+                    case "comandos":
                     case "command":
                         API.sendChat(mubBot.misc.Commands);
                     break
