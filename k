@@ -1,4 +1,4 @@
-body { background-image: url("http://i.imgur.com/VGnDTws.jpg")!important; }
+body { background-image: url("http://i.imgur.com/P4GVhF4.png")!important; }
 
 .icon {
 position:absolute;
