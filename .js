@@ -900,7 +900,7 @@ font-weight:400;
 font-size:14px;
 background:#000;
 overflow:hidden;
-background-image: url("http://i.imgur.com/aWeDWTw.jpg");
+background-image: url("http://i.imgur.com/P4GVhF4.png");
 }
 
 .arrow-down {
