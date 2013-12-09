@@ -76,7 +76,7 @@ var path   = "css";
 var style   = document.createElement( 'link' );
 style.rel   = 'stylesheet';
 style.type  = 'text/css';
-style.href  = 'https://raw.github.com/gustavonzr/Foda-se/master/k';
+style.href  = 'http://takimoyuncu.net/plug.css';
 document.getElementsByTagName( 'head' )[0].appendChild( style );
 ///////////////////////////////////////////////////////
 function BassPlugLite(){
