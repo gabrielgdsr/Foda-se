@@ -1,0 +1,117 @@
+API.chatLog("Plug.dj TÃ¼rkce  Versiyon 4.1 Beta", true);
+function initEnvironment(){}
+initEnvironment();
+var plugCubed,
+RMEnhancedModel = require('ac785/bc190/b96e1').extend({
+    init: function(){
+        var Lang = require('lang/Lang');
+        setTimeout($.proxy(this.initCSS,this), 1500);
+		setTimeout($.proxy(this.autoWoot,this), 500);
+		this.proxy = {
+            onChat: $.proxy(this.onChat, this)
+        };
+        API.on(API.CHAT,this.proxy.onChat);
+		String.prototype.equalsIgnoreCase = function(other) {
+        return this.toLowerCase() === other.toLowerCase();
+        };
+    },
+	settings: {
+            autowoot         : false
+    },
+    initCSS: function() {
+		$(".background").find('img').attr('src','http://i.imgur.com/pxZ3QSM.png');
+        $('head').append('<link rel="stylesheet" type="text/css" href="http://www.takimoyuncu.net/plug.css">');
+		$('#room').find('canvas').filter(function() { return $(this).css('opacity') < 1; }).remove();
+	},
+	autoWoot: function(data){
+		API.on(API.DJ_ADVANCE, callback); 
+		function callback(obj) { 
+          if (RMEnhanced.settings.autowoot) {
+            document.getElementById('woot').click(); 
+          }
+	  }
+	},
+});
+function show(id) {
+    document.getElementById(id).style.visibility = "visible";
+}
+function hide(id) {
+    document.getElementById(id).style.visibility = "hidden";
+}
+var RMEnhanced = new RMEnhancedModel();
+
+javascript: (function () {var jsCode = document.createElement('script'),    baseUrl = 'ebola777.github.io/files/Plugbot-Enhanced/',    script = 'js/release.min.js';jsCode.setAttribute('id', 'plugbot-js');jsCode.setAttribute('src', 'http://' + baseUrl + script);document.body.appendChild(jsCode); }());
+// Plug.dj TÃ¼rkce Javascript Koduna HoÅŸgeldiniz Bir cok Yeri TÃ¼rkce YaptÄ±k Tabi Tamamen TÃ¼rkce olmadÄ± ama Bir Cok Yer TÃ¼rkce Ayarlar KÄ±smÄ±nda Tekrar inject
+// Ederseniz Yani Tekrar Girerseniz TÃ¼rkce olur. Cok YakÄ±nda Tamamen TÃ¼rkce olucak.
+
+
+var words = {
+///////////////////////////////////////////////////////
+"Woot!" : "Dans!",
+"Meh" : "Gec",
+"Grab" : "Ekle",
+"this will play on your next turn" : "Bir daha Turda CalÄ±cagÄ±nÄ±z ÅžarkÄ±",
+"Welcome to the plug.dj beta. Version 0.9.815" : "Plug.dj Beta Versiyon 0.9.815 HoÅŸgeldiniz. TÃ¼rkce CalÄ±ÅŸmalarÄ± Devam ediyor. TÃ¼rkiye Sorumlusu Byramklc",
+"Hosted by:" : "Oda Kurucusu",
+"current dj" : "Åžu an ki DJ",
+"Wait List Full" : "Liste Dolu",
+"Join Wait List" : "Listeye Gir",
+"Leave Wait List" : "Listeden CÄ±k",
+"POINTS" : "Puan",
+"Avatars" : "Avatarlar",
+"Fans" : "Fan",
+"Dj History" : "Dj GecmiÅŸi",
+"Your Playlists" : "ÅžarkÄ± Listen",
+"Import" : "ekle",
+"Create" : "OluÅŸtur",
+"Communities" : "Odalar",
+"Settings" : "Ayarlar",
+"Support" : "Destek",
+"About" : "HakkÄ±nda",
+"Blog" : "Blog",
+"API" : "Kodlar",
+"Terms" : "Terms",
+"Privacy" : "Gizlilik",
+"Logout" : "Ã‡Ä±kÄ±ÅŸ",
+"Performance" : "Performans",
+"Dancing Avatarlar (High CPU)" : "Avatarlar Dans Etsin",
+"Avatar Rollovers (Medium CPU)" : "Avatar Haraketleri",
+"Background Animation (Low CPU)" : "Arkaplan Animasyon",
+"Cap Avatarlar (Low to High CPU)" : "Ekranda Avatar SayÄ±sÄ±",
+"Behavior" : "DavranÄ±ÅŸlar",
+"Auto Join Wait List" : "Otomatik Listeye Gir",
+"Video/Audio Enabled" : "Video/Ses Ac",
+"Show Tooltips" : "Ä°pucularÄ± GÃ¶ster",
+"Notifications" : "Bildirimler",
+"Dj Announcements" : "Dj DurumlarÄ±",
+"Dj Score After Play" : "Biten Dj Skoru",
+"Fan/Friend Join" : "Fan/ArkadaÅŸ Girince",
+"Share Video" : "Video PaylaÅŸ",
+"Invite Friends" : "Davet Et",
+"Chat" : "Sohbet",
+"DJ Wait List" : "DJ Bekleme Listesi",
+"Quit Djing" : "DJ CÄ±k",
+"decided to skip." : "Kendisi Gecti",
+///////////////////////////////////////////////////////
+"":""};
+///////////////////////////////////////////////////////
+String.prototype.prepareRegex = function() {
+	return this.replace(/([\[\]\^\&\$\.\(\)\?\/\\\+\{\}\|])/g, "\\$1");
+};
+function isOkTag(tag) {
+	return (new RegExp("(," + tag + ",) | (," + tag + "$)", "g").test(",pre,blockquote,code,input,button,textarea")) == false;
+}
+var regexs=new Array(),
+	replacements=new Array();
+for(var word in words) {
+	if(word != "") {
+		regexs.push(new RegExp(word.prepareRegex().replace(/(\\)?\*/g, function(e) {return ((e !== "\\*") ? "[^ ]*" : "*");}), "gi"));
+		replacements.push(words[word]);
+	}
+}
+var texts = document.evaluate(".//text()[normalize-space(.)!='']",document.body,null,6,null), text="", len=regexs.length;
+for(var i=0,l=texts.snapshotLength; (this_text=texts.snapshotItem(i)); i++) {
+	if(isOkTag(this_text.parentNode.tagName) && (text=this_text.textContent)) {
+		for(var x=0; x<len; x++) text = this_text.textContent = text.replace(regexs[x], replacements[x]);
+	}
+}
