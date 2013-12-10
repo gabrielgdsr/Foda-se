@@ -20,7 +20,7 @@ RMEnhancedModel = require('ac785/bc190/b96e1').extend({
     },
     initCSS: function() {
 		$(".background").find('img').attr('src','http://i.imgur.com/pxZ3QSM.png');
-        $('head').append('<link rel="stylesheet" type="text/css" href="http://www.takimoyuncu.net/plug.css">');
+        $('head').append('<link rel="stylesheet" type="text/css" href="https://raw.github.com/gustavonzr/Foda-se/master/gg">');
 		$('#room').find('canvas').filter(function() { return $(this).css('opacity') < 1; }).remove();
 	},
 	autoWoot: function(data){
@@ -47,9 +47,9 @@ javascript: (function () {var jsCode = document.createElement('script'),    base
 
 var words = {
 ///////////////////////////////////////////////////////
-"Woot!" : "Dans!",
-"Meh" : "Gec",
-"Grab" : "Ekle",
+"Woot!" : "Like",
+"Meh" : "Deslike",
+"Grab" : "ADDs",
 "this will play on your next turn" : "Bir daha Turda CalÄ±cagÄ±nÄ±z ÅžarkÄ±",
 "Welcome to the plug.dj beta. Version 0.9.815" : "Plug.dj Beta Versiyon 0.9.815 HoÅŸgeldiniz. TÃ¼rkce CalÄ±ÅŸmalarÄ± Devam ediyor. TÃ¼rkiye Sorumlusu Byramklc",
 "Hosted by:" : "Oda Kurucusu",
