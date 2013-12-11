@@ -68,7 +68,7 @@ function djAdvanceEvent(data){
 API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)
 {
-API.sendChat("@" + user.username + " acaba de entrar na sala.");
+API.sendChat("" + usr.username + " ");
 }
 
 
