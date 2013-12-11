@@ -12,24 +12,13 @@ toSave.settings = mubBot.settings;
 toSave.moderators = mubBot.moderators;
 toSave.ruleSkip = ruleSkip;
 
-mubBot.misc.Rules = "1) Tempo máximo 6 min e 30 seg.
-2) Não escrever em /me ou /em.
-3) Respeitar os moderadores da sala.
-4) Sem flood no chat .
-5) Não fique pedindo cargos.
-6) Proibido pedir fan ou usar fanbot!
-
-1) Maximum time 6 minutes and 30 seconds.
-2) Can&amp;#39;t write in /me or /em.
-3) Respect the moderators of the room.
-4) Without flood in the chat and without Fanbot.
-5) Can&amp;#39;t ask positions..";
-mubBot.misc.Commands = "go to https://docs.google.com/document/d/1azqfktew9IJFP4gaXWbS9aLuKyyjPMOMeFNGxxeRCKY/edit?pli=1"
-mubBot.misc.Themes = "Dubstep, Remix's, and techno";
-mubBot.misc.help = "Type !rules for rules and !commands for commands" //What Help will say
+mubBot.misc.Rules = "1) Tempo máximo 6 min e 30 seg.2) Não escrever em /me ou /em.3) Respeitar os moderadores da sala.4) Sem flood no chat .5) Não fique pedindo cargos.6) Proibido pedir fan ou usar fanbot!";
+mubBot.misc.Commands = "Comandos para ADMs da sala https://docs.google.com/document/d/1azqfktew9IJFP4gaXWbS9aLuKyyjPMOMeFNGxxeRCKY/edit?pli=1"
+mubBot.misc.Themes = "Dubstep, Remix's, and techno e variados";
+mubBot.misc.help = "Digite !regras para ler as regras da sala e !commands para ver os comandos do chatbot!" //What Help will say
 mubBot.misc.version = "1.0.8";
-mubBot.misc.origin = "This bot was created by Dubstepers, Alexander7370, and Foxdemon143. This bot and its script are copyrighted!";
-mubBot.misc.changelog = "Added a secondary check for history";
+mubBot.misc.origin = "Bot Editado para a sala ★Electro House BR★™";
+mubBot.misc.changelog = "Adicionado uma verificação secundária para a história!!";
 mubBot.misc.ready = true;
 mubBot.misc.lockSkipping = false;
 mubBot.misc.lockSkipped = "0";
@@ -79,7 +68,7 @@ function djAdvanceEvent(data){
 API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)
 {
-API.sendChat("@" + user.username + " has joined the room.");
+API.sendChat("@" + user.username + " acaba de entrar na sala.");
 }
 
 
@@ -145,20 +134,20 @@ botMethods.djAdvanceEvent = function(data){
     var song = API.getMedia();
     if(botMethods.checkHistory() > 0 && mubBot.settings.historyFilter){
         if(API.getUser().permission < 2){
-            API.sendChat("This song is in the history! You should make me a mod so that I could skip it!");
+            API.sendChat("Esta música está na história! Você deve me fazer um mod para que eu pudesse ignorá-lo!");
         }else if(API.getUser().permission > 1){
-            API.sendChat("@" + API.getDJs()[0].username + ", playing songs that are in the history isn't allowed, please check next time! Skipping..");
+            API.sendChat("@" + API.getDJs()[0].username + ", tocando músicas que estão na história não é permitido, por favor, verifique a próxima vez! Ignorando ..");
             botMethods.skip()
         }else if(song.duration > mubBot.settings.maxLength * 60){
             mubBot.pubVars.skipOnExceed = setTimeout( function(){
-                API.sendChat("@"+API.getDJs()[0].username+" You have now played for as long as this room allows, time to let someone else have the booth!");
+                API.sendChat("@"+API.getDJs()[0].username+" Você já jogou por quanto tempo esta sala permite, é hora de deixar alguém ter a cabine!");
                 botMethods.skip();
             }, mubBot.settings.maxLength * 60000);
-            //API.sendChat("@"+API.getDJs()[0].username+" This song will be skipped " + mubBot.settings.maxLength + " minutes from now because it exceeds the max song length.");
+            //API.sendChat("@"+API.getDJs()[0].username+" This song will be skipped " + mubBot.settings.maxLength + " minutos a partir de agora, pois excede o comprimento máximo canção.");
         }else{
             setTimeout(function(){
                 if(botMethods.checkHistory() > 0 && mubBot.settings.historyFilter){
-                    API.sendChat("@" + API.getDJs()[0].username + ", playing songs that are in the history isn't allowed, please check next time! Skipping..");
+                    API.sendChat("@" + API.getDJs()[0].username + ", tocando músicas que estão na história não é permitido, por favor, verifique a próxima vez! Ignorando ..");
                     botMethods.skip()
                 };
             }, 1500);
@@ -207,9 +196,9 @@ botMethods.djAdvanceEvent = function(data){
                         if(typeof command[1] == "undefined"){
                             API.sendChat("User Commands - Not Available Yet");
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" User Commands - Not Available Yet");
+                            API.sendChat(command[1]+" Comandos do usuário - ainda não disponível");
                         }else{
-                            API.sendChat("User Commands - Not Availble Yet");
+                            API.sendChat("Comandos do usuário - ainda não disponível");
                         }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
@@ -221,9 +210,9 @@ botMethods.djAdvanceEvent = function(data){
                         if(typeof command[1] == "undefined"){
                             API.sendChat("Mods Commands - Not Available Yet");
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" Mods Commands - Not Available Yet");
+                            API.sendChat(command[1]+" Comandos - ainda não disponível");
                         }else{
-                            API.sendChat("Mods Commands - Not Available Yet");
+                            API.sendChat("Comandos - ainda não disponível");
                         }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
@@ -235,9 +224,9 @@ botMethods.djAdvanceEvent = function(data){
                         if(typeof command[1] == "undefined"){
                             API.sendChat("User List - Not Available Yet");
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" User List - Not Available Yet");
+                            API.sendChat(command[1]+" Lista de usuários - ainda não disponível");
                         }else{
-                            API.sendChat("User List - Not Available Yet");
+                            API.sendChat("Lista de usuários - ainda não disponível");
                         }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
@@ -284,13 +273,13 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
 
-                    case "twitter":
+                    case "fb":
                         if(typeof command[1] == "undefined"){
-                            API.sendChat("Twitter - Not Available Yet");
+                            API.sendChat("Entre em nosso grupo e fique por dentro de todas nossas atualizações http://goo.gl/rlJWdQ");
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" Twitter - Not Available Yet");
+                            API.sendChat(command[1]+" Entre em nosso grupo e fique por dentro de todas nossas atualizações http://goo.gl/rlJWdQ");
                         }else{
-                            API.sendChat("Twitter - Not Available Yet");
+                            API.sendChat("Entre em nosso grupo e fique por dentro de todas nossas atualizações http://goo.gl/rlJWdQ");
                         }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
@@ -298,13 +287,13 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
 
-                    case "linkify":
+                    case "links":
                         if(typeof command[1] == "undefined"){
-                            API.sendChat("@" + data.from + " You need to put a link!");
+                            API.sendChat("@" + data.from + " Grupo1: http://goo.gl/rlJWdQ Grupo2: http://goo.gl/dj3gYf Fanpage: http://goo.gl/vwyUEs");
                         }else if(command[1].toLowerCase().indexOf("plug.dj") === -1 && command[1].toLowerCase().indexOf("bug.dj") === -1){
                             API.sendChat("http://"+command[1]);
                         }else{
-                            API.sendChat("Nice try! Advertising is not allowed in this room.");
+                            API.sendChat("Grupo1: http://goo.gl/rlJWdQ Grupo2: http://goo.gl/dj3gYf Fanpage: http://goo.gl/vwyUEs");
                         }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
@@ -312,9 +301,9 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
 
-                    case "songlink":
+                    case "musiclink":
                         if(API.getMedia().format == 1){
-                            API.sendChat("@" + data.from + " " + "http://youtu.be/" + API.getMedia().cid);
+                            API.sendChat("@" + data.from + " " + "Link da musica que esta tocando http://youtu.be/" + API.getMedia().cid);
                         }else{
                             var id = API.getMedia().cid;
                             SC.get('/tracks', { ids: id,}, function(tracks) {
@@ -383,27 +372,27 @@ botMethods.djAdvanceEvent = function(data){
                             mubBot.misc.lockSkipped = API.getDJs()[0].id;
                             setTimeout(function(){ API.moderateRemoveDJ(mubBot.misc.lockSkipped); }, 500);
                         }else{
-                            API.sendChat("This command requires bouncer or higher!");
+                            API.sendChat("Teste comando requer bouncer ou superior!");
                         }
                         break;
                     case 'rvf':
                     case 'removedfilter':
-                        if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1) mubBot.settings.removedFilter ? API.sendChat("Removed video filter is enabled") : API.sendChat("Removed video is disabled");
+                        if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1) mubBot.settings.removedFilter ? API.sendChat("Retire o filtro de vídeo é ativado") : API.sendChat("Removed video is disabled");
                         break;
                     case 'trvf':
                     case 'toggleremovedfilter':
                         mubBot.settings.removedFilter = !mubBot.settings.removedFilter;
-                        if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1) mubBot.settings.removedFilter ? API.sendChat("Removed video filter is enabled") : API.sendChat("Removed video is disabled");
+                        if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1) mubBot.settings.removedFilter ? API.sendChat("Retire o filtro de vídeo é ativado") : API.sendChat("Removed video is disabled");
                         break;
                     case "historyfilter":
-                    case "hf":
-                        if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1) mubBot.settings.historyFilter ? API.sendChat("History filter is enabled") : API.sendChat("History filter is disabled");
+                    case "ht":
+                        if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1) mubBot.settings.historyFilter ? API.sendChat("Filtro de História está habilitado") : API.sendChat("History filter is disabled");
                         botMethods.save();
                         break;
 
                     case "swearfilter":
                     case "sf":
-                        if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1) mubBot.settings.swearFilter ? API.sendChat("Swearing filter is enabled") : API.sendChat("Swearing filter is disabled");
+                        if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1) mubBot.settings.swearFilter ? API.sendChat("Jurando filtro está habilitado") : API.sendChat("Swearing filter is disabled");
                         botMethods.save();
                         break;
 
@@ -457,14 +446,14 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         botMethods.save();
                         break;
-                    case "thf":
+                    case "htoff":
                         if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
                             if(mubBot.settings.historyFilter){
                                 mubBot.settings.historyFilter = false;!
-                                    API.sendChat("Bot will no longer skip songs that are in the room history.");
+                                    API.sendChat("Bot não vai mais pular as músicas que estão na história quarto.");
                             }else{
                                 mubBot.settings.historyFilter = true;
-                                API.sendChat("Bot will now skip songs that are in the room history.");
+                                API.sendChat("Bot não vai mais pular as músicas que estão na história quarto.");
                             }
                         }
                         botMethods.save();
@@ -475,24 +464,24 @@ botMethods.djAdvanceEvent = function(data){
                     
                     case "themes":
                     case "theme":
-                        API.sendChat("The different themes aloud are: " + mubBot.misc.Themes);
+                        API.sendChat("Os diferentes temas em voz alta são: " + mubBot.misc.Themes);
                     break
                     
                     case "help":
                         API.sendChat(mubBot.misc.help);
                     break
                     
-                    case "derp":
-                        API.sendChat("Is ThIs DeRpY eNoUgH fOr YoU http://i.imgur.com/MqTfoHg.png");
+                    case "stoomper":
+                        API.sendChat("Zika da balada!!!");
                     break
                     
                     case "commands":
-                    case "command":
+                    case "comandos":
                         API.sendChat(mubBot.misc.Commands);
                     break
                     
                     case "version":
-                        API.sendChat("Dubstepers-Bot version " + mubBot.misc.version);
+                        API.sendChat("Chatbot editado para a sala ★Electro House BR★™ " + mubBot.misc.version)
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -520,13 +509,13 @@ botMethods.djAdvanceEvent = function(data){
                                 minutes = minutes - 60;
                                 hours++;
                             }
-                            hours == 0 ? response = "Running for " + minutes + "m " : response = "Running for " + hours + "h " + minutes + "m";
+                            hours == 0 ? response = "Ativado por " + minutes + "minutos " : response = "ativador por " + hours + "horas " + minutes + "minutos";
                             response = response + " | Begger filter: "+mubBot.settings.beggerFilter;
                             response = response + " | Swear filter: "+mubBot.settings.swearFilter;
                             response = response + " | Racism filter: "+mubBot.settings.racismFilter;
                             response = response + " | History filter: "+mubBot.settings.historyFilter;
-                            response = response + " | MaxLength: " + mubBot.settings.maxLength + "m";
-                            response = response + " | Cooldown: " + mubBot.settings.cooldown + "s";
+                            response = response + " | MaxLength: " + mubBot.settings.maxLength + "minutos";
+                            response = response + " | Cooldown: " + mubBot.settings.cooldown + "segundos";
                             response = response + " | RuleSkip: "+ mubBot.settings.ruleSkip;
                             response = response + " | Removed Video Filter: "+ mubBot.settings.removedFilter;
                             API.sendChat(response);
@@ -594,7 +583,7 @@ botMethods.djAdvanceEvent = function(data){
                     case "save":
                         if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
                             botMethods.save();
-                            API.sendChat("Settings saved.");
+                            API.sendChat("Configurações salvas.");
                         }
                         break;
 
