@@ -259,11 +259,11 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
 
-                    case "link":
+                    case "love":
                         if(typeof command[1] == "undefined"){
                             API.sendChat("Our Web - Not Available Yet");
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" Our Web - Not Available Yet");
+                            API.sendChat(command[1]+" O obijetivo dos ADM´s da sala não é ganhar pontos ou fans , mais sim trazer a alegria a todos , fazer novas amizades , conhecer novas pessoas!!!!");
                         }else{
                             API.sendChat("Our Web - Not Available Yet");
                         }
@@ -458,12 +458,12 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         botMethods.save();
                         break;
-                    case "rules":
+                    case "regras":
                         API.sendChat("Rules: " + mubBot.misc.Rules);
                     break
                     
                     case "themes":
-                    case "theme":
+                    case "temas":
                         API.sendChat("Os diferentes temas em voz alta são: " + mubBot.misc.Themes);
                     break
                     
@@ -510,14 +510,14 @@ botMethods.djAdvanceEvent = function(data){
                                 hours++;
                             }
                             hours == 0 ? response = "Ativado por " + minutes + "minutos " : response = "ativador por " + hours + "horas " + minutes + "minutos";
-                            response = response + " | Begger filter: "+mubBot.settings.beggerFilter;
-                            response = response + " | Swear filter: "+mubBot.settings.swearFilter;
-                            response = response + " | Racism filter: "+mubBot.settings.racismFilter;
-                            response = response + " | History filter: "+mubBot.settings.historyFilter;
+                            response = response + " | Filtro Mendigo: "+mubBot.settings.beggerFilter;
+                            response = response + " | Juro filtro: "+mubBot.settings.swearFilter;
+                            response = response + " | filtro Racismo: "+mubBot.settings.racismFilter;
+                            response = response + " | filtro História: "+mubBot.settings.historyFilter;
                             response = response + " | MaxLength: " + mubBot.settings.maxLength + "minutos";
                             response = response + " | Cooldown: " + mubBot.settings.cooldown + "segundos";
                             response = response + " | RuleSkip: "+ mubBot.settings.ruleSkip;
-                            response = response + " | Removed Video Filter: "+ mubBot.settings.removedFilter;
+                            response = response + " | Remover Filtro vídeo: "+ mubBot.settings.removedFilter;
                             API.sendChat(response);
                         }
                         break;
@@ -587,10 +587,10 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
 
-                    case "stfu":
+                    case "!fans":
                         if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
                             mubBot.settings.interactive = false;
-                            API.sendChat("Yessir!");
+                            API.sendChat("Ganhe seus fans tocando musicas boas e interagindo com todos , não mendigando!!");
                         }
                         botMethods.save();
                         break;
