@@ -234,9 +234,9 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                         
-                    case "wiki":
+                    case "!calmafera":
                         if(typeof command[1] == "undefined"){
-                            API.sendChat("@"+data.from+" https://en.wikipedia.org/wiki/Special:Random");
+                            API.sendChat("@"+data.from+" Sente-se se acalme , tome um chá , e curta a vibe :sunglasses: ");
                         }else{
                             var r = data.message.substring(6).replace(/ /g, "_");
                             $.getJSON("http://jsonp.appspot.com/?callback=?&url=" + escape("http://en.wikipedia.org/w/api.php?action=query&prop=links&format=json&titles="+r.replace(/ /g,"_")),
@@ -265,7 +265,7 @@ botMethods.djAdvanceEvent = function(data){
                         }else if(command[1].indexOf("@") > -1){
                             API.sendChat(command[1]+" O obijetivo dos ADM´s da sala não é ganhar pontos ou fans , mais sim trazer a alegria a todos , fazer novas amizades , conhecer novas pessoas!!!!");
                         }else{
-                            API.sendChat("Our Web - Not Available Yet");
+                            API.sendChat("" O obijetivo dos ADM´s da sala não é ganhar pontos ou fans , mais sim trazer a alegria a todos , fazer novas amizades , conhecer novas pessoas!!!");
                         }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
@@ -275,11 +275,11 @@ botMethods.djAdvanceEvent = function(data){
 
                     case "fb":
                         if(typeof command[1] == "undefined"){
-                            API.sendChat("Entre em nosso grupo e fique por dentro de todas nossas atualizações http://goo.gl/rlJWdQ");
+                            API.sendChat("Entre em nosso grupo e fique por dentro de todas nossas atualizações http://goo.gl/lcQ4cJ");
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" Entre em nosso grupo e fique por dentro de todas nossas atualizações http://goo.gl/rlJWdQ");
+                            API.sendChat(command[1]+" Entre em nosso grupo e fique por dentro de todas nossas atualizações http://goo.gl/lcQ4cJ");
                         }else{
-                            API.sendChat("Entre em nosso grupo e fique por dentro de todas nossas atualizações http://goo.gl/rlJWdQ");
+                            API.sendChat("Entre em nosso grupo e fique por dentro de todas nossas atualizações http://goo.gl/lcQ4cJ");
                         }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
@@ -289,11 +289,11 @@ botMethods.djAdvanceEvent = function(data){
 
                     case "links":
                         if(typeof command[1] == "undefined"){
-                            API.sendChat("@" + data.from + " Grupo1: http://goo.gl/rlJWdQ Grupo2: http://goo.gl/dj3gYf Fanpage: http://goo.gl/vwyUEs");
+                            API.sendChat("" + data.from + " Welcome in the room! / Bem-vindo a sala ! Rules!/Regras! |Dont ask for FANS| http://migre.me/hiIvZ Group!/Grupo! https://www.facebook.com/groups/DTEplugdj/ Page!/Página! https://www.facebook.com/ETDPlugdj);
                         }else if(command[1].toLowerCase().indexOf("plug.dj") === -1 && command[1].toLowerCase().indexOf("bug.dj") === -1){
                             API.sendChat("http://"+command[1]);
                         }else{
-                            API.sendChat("Grupo1: http://goo.gl/rlJWdQ Grupo2: http://goo.gl/dj3gYf Fanpage: http://goo.gl/vwyUEs");
+                            API.sendChat("Welcome in the room! / Bem-vindo a sala ! Rules!/Regras! |Dont ask for FANS| http://migre.me/hiIvZ Group!/Grupo! https://www.facebook.com/groups/DTEplugdj/ Page!/Página! https://www.facebook.com/ETDPlugdj");
                         }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
@@ -1010,7 +1010,7 @@ botMethods.djAdvanceEvent = function(data){
 
 
     botMethods.loadStorage();
-    console.log("Running Rᴇᴅsᴛᴏɴᴇʀ Script version " + mubBot.misc.version);
+    console.log("CHATBOT ATIVADO " + mubBot.misc.version);
 
     setTimeout(function(){
         $.getScript('');
@@ -1022,4 +1022,4 @@ botMethods.djAdvanceEvent = function(data){
         });
     }, 3000);
 
-    API.sendChat('/me : Running Dubstepers Script '+mubBot.misc.version)
+    API.sendChat('/me : CHATBOT ON vlw!? flw!! '+mubBot.misc.version)
