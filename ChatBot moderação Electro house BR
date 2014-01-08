@@ -289,7 +289,7 @@ botMethods.djAdvanceEvent = function(data){
 
                     case "links":
                         if(typeof command[1] == "undefined"){
-                            API.sendChat("" + data.from + " Welcome in the room! / Bem-vindo a sala ! Rules!/Regras! |Dont ask for FANS| http://migre.me/hiIvZ Group!/Grupo! https://www.facebook.com/groups/DTEplugdj/ Page!/Página! https://www.facebook.com/ETDPlugdj);
+                            API.sendChat("@" + data.from + " Welcome in the room! / Bem-vindo a sala ! Rules!/Regras! |Dont ask for FANS| http://migre.me/hiIvZ Group!/Grupo! https://www.facebook.com/groups/DTEplugdj/ Page!/Página! https://www.facebook.com/ETDPlugdj);
                         }else if(command[1].toLowerCase().indexOf("plug.dj") === -1 && command[1].toLowerCase().indexOf("bug.dj") === -1){
                             API.sendChat("http://"+command[1]);
                         }else{
