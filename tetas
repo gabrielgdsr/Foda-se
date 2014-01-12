@@ -13,11 +13,11 @@ toSave.moderators = mubBot.moderators;
 toSave.ruleSkip = ruleSkip;
 
 mubBot.misc.Rules = "1) Tempo máximo 6 min e 30 seg.2) Não escrever em /me ou /em.3) Respeitar os moderadores da sala.4) Sem flood no chat .5) Não fique pedindo cargos.6) Proibido pedir fan ou usar fanbot!";
-mubBot.misc.Commands = "Comandos para ADMs da sala https://docs.google.com/document/d/1azqfktew9IJFP4gaXWbS9aLuKyyjPMOMeFNGxxeRCKY/edit?pli=1"
+mubBot.misc.Commands = "Não tem comando vlw flw"
 mubBot.misc.Themes = "Dubstep, Remix's, and techno e variados";
 mubBot.misc.help = "Digite !regras para ler as regras da sala e !commands para ver os comandos do chatbot!" //What Help will say
 mubBot.misc.version = "1.0.8";
-mubBot.misc.origin = "Bot Editado para a sala ★Electro House BR★™";
+mubBot.misc.origin = "Electro, Trap & Dubstep Brasil |Editado por FUNKYBLACKCAT ;
 mubBot.misc.changelog = "Adicionado uma verificação secundária para a história!!";
 mubBot.misc.ready = true;
 mubBot.misc.lockSkipping = false;
@@ -262,7 +262,7 @@ botMethods.djAdvanceEvent = function(data){
                     case "link":
                         if(typeof command[1] == "undefined"){
                             API.sendChat("Our Web - Not Available Yet");
-                        }else if(command[1].indexOf("@") > -1){
+                        }else if(command[1].indexOf("") > -1){
                             API.sendChat(command[1]+" Our Web - Not Available Yet");
                         }else{
                             API.sendChat("Our Web - Not Available Yet");
@@ -275,11 +275,11 @@ botMethods.djAdvanceEvent = function(data){
 
                     case "fb":
                         if(typeof command[1] == "undefined"){
-                            API.sendChat("Entre em nosso grupo e fique por dentro de todas nossas atualizações http://goo.gl/rlJWdQ");
+                            API.sendChat("Entre em nosso grupo e fique por dentro de todas nossas atualizações http://goo.gl/lVXPkT");
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" Entre em nosso grupo e fique por dentro de todas nossas atualizações http://goo.gl/rlJWdQ");
+                            API.sendChat(command[1]+" Entre em nosso grupo e fique por dentro de todas nossas atualizações http://goo.gl/lVXPkT");
                         }else{
-                            API.sendChat("Entre em nosso grupo e fique por dentro de todas nossas atualizações http://goo.gl/rlJWdQ");
+                            API.sendChat("Entre em nosso grupo e fique por dentro de todas nossas atualizações http://goo.gl/lVXPkT");
                         }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
@@ -289,11 +289,11 @@ botMethods.djAdvanceEvent = function(data){
 
                     case "links":
                         if(typeof command[1] == "undefined"){
-                            API.sendChat("@" + data.from + " Grupo1: http://goo.gl/rlJWdQ Grupo2: http://goo.gl/dj3gYf Fanpage: http://goo.gl/vwyUEs");
+                            API.sendChat("" + data.from + " Welcome in the room! / Bem-vindo a sala ! Rules!/Regras! |Dont ask for FANS| http://migre.me/hiIvZ NOVO Group!/Grupo! https://www.facebook.com/groups/647914285267897/ Page!/Página! https://www.facebook.com/ETDPlugdj");
                         }else if(command[1].toLowerCase().indexOf("plug.dj") === -1 && command[1].toLowerCase().indexOf("bug.dj") === -1){
                             API.sendChat("http://"+command[1]);
                         }else{
-                            API.sendChat("Grupo1: http://goo.gl/rlJWdQ Grupo2: http://goo.gl/dj3gYf Fanpage: http://goo.gl/vwyUEs");
+                            API.sendChat("Welcome in the room! / Bem-vindo a sala ! Rules!/Regras! |Dont ask for FANS| http://migre.me/hiIvZ NOVO Group!/Grupo! https://www.facebook.com/groups/647914285267897/ Page!/Página! https://www.facebook.com/ETDPlugdj");
                         }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
@@ -458,11 +458,11 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         botMethods.save();
                         break;
-                    case "rules":
+                    case "regras":
                         API.sendChat("Rules: " + mubBot.misc.Rules);
                     break
                     
-                    case "themes":
+                    case "temas":
                     case "theme":
                         API.sendChat("Os diferentes temas em voz alta são: " + mubBot.misc.Themes);
                     break
@@ -471,8 +471,8 @@ botMethods.djAdvanceEvent = function(data){
                         API.sendChat(mubBot.misc.help);
                     break
                     
-                    case "stoomper":
-                        API.sendChat("Zika da balada!!!");
+                    case "FUNKY":
+                        API.sendChat("Foi ban te conhecer!!");
                     break
                     
                     case "commands":
@@ -481,7 +481,7 @@ botMethods.djAdvanceEvent = function(data){
                     break
                     
                     case "version":
-                        API.sendChat("Chatbot editado para a sala ★Electro House BR★™ " + mubBot.misc.version)
+                        API.sendChat("Chatbot editado para a sala Electro, Trap & Dubstep Brasil" + mubBot.misc.version)
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -490,7 +490,7 @@ botMethods.djAdvanceEvent = function(data){
 
                     case "origin":
                     case "author":
-                    case "authors":
+                    case "autor":
                     case "creator":
                         API.sendChat(mubBot.misc.origin);
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
@@ -1010,7 +1010,7 @@ botMethods.djAdvanceEvent = function(data){
 
 
     botMethods.loadStorage();
-    console.log("Running Rᴇᴅsᴛᴏɴᴇʀ Script version " + mubBot.misc.version);
+    console.log("CHATBOT ATIVO " + mubBot.misc.version);
 
     setTimeout(function(){
         $.getScript('');
@@ -1022,4 +1022,4 @@ botMethods.djAdvanceEvent = function(data){
         });
     }, 3000);
 
-    API.sendChat('/me : Running Dubstepers Script '+mubBot.misc.version)
+    API.sendChat('/me : CHATBOT ATIVO '+mubBot.misc.version)
