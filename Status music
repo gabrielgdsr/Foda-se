@@ -1,6 +1,6 @@
 API.on(API.CHAT,onChat);
 API.on(API.DJ_ADVANCE,onDjAdv);
-API.sendChat('/me Top! ');
+API.sendChat('/me ETD Avalia ON! ');
 var song;
 if (API.getDJs().length == 0) API.on(API.DJ_UPDATE,djUpdate);
 else song = API.getMedia().author + ' - ' + API.getMedia().title;
