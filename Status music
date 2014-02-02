@@ -1,6 +1,6 @@
 API.on(API.CHAT,onChat);
 API.on(API.DJ_ADVANCE,onDjAdv);
-API.sendChat('/me ON! ');
+API.sendChat('/me EDT Avali! ');
 var song;
 if (API.getDJs().length == 0) API.on(API.DJ_UPDATE,djUpdate);
 else song = API.getMedia().author + ' - ' + API.getMedia().title;
@@ -29,7 +29,7 @@ function onDjAdv(obj) {
         setTimeout(function(){document.getElementById("button-vote-positive").click();},1500);
         var songStr = song;
         var woots = obj.lastPlay.score.positive, mehs = obj.lastPlay.score.negative, curates = obj.lastPlay.score.curates ;
-        if (woots === 1) var ww = ' woot :+1: '; else var ww = ' woots :+1: ';
+        if (woots === 1) var ww = ' woot :+1: '; else var ww = ' Fodas :+1: ';
         if (mehs === 1) var mm = ' meh :-1: '; else var mm = ' mehs :-1: ';
         if (curates === 1) var cc = ' curate :green_heart:'; else var cc = ' curates :green_heart: ';
         var scoreStr = ' Status Music: ' + woots + ww + mehs + mm + curates + cc;
