@@ -32,7 +32,7 @@ function onDjAdv(obj) {
         if (woots === 1) var ww = ' woot :+1: '; else var ww = ' fodas :+1: ';
         if (mehs === 1) var mm = ' meh :-1: '; else var mm = ' Uma Bosta :-1: ';
         if (curates === 1) var cc = ' curate :green_heart:'; else var cc = ' Invejosos :green_heart: ';
-        var scoreStr = ' Status Music: ' + woots + ww + mehs + mm + curates + cc;
+        var scoreStr = ' ETD Availia: ' + woots + ww + mehs + mm + curates + cc;
         API.sendChat('/em: ' + songStr + scoreStr);
         song = API.getMedia().author + ' - ' + API.getMedia().title;
 }
